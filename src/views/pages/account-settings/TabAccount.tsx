@@ -1,0 +1,199 @@
+// ** React Imports
+import { useState, SyntheticEvent } from 'react'
+
+// ** MUI Imports
+import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
+import Alert from '@mui/material/Alert'
+import TextField from '@mui/material/TextField'
+import AlertTitle from '@mui/material/AlertTitle'
+import IconButton from '@mui/material/IconButton'
+import CardContent from '@mui/material/CardContent'
+
+// import Typography from '@mui/material/Typography'
+// import { styled } from '@mui/material/styles'
+// import Box from '@mui/material/Box'
+// import FormControl from '@mui/material/FormControl'
+// import Button from '@mui/material/Button'
+// import InputLabel from '@mui/material/InputLabel'
+// import MenuItem from '@mui/material/MenuItem'
+// import Select from '@mui/material/Select'
+
+// ** Icons Imports
+import Close from 'mdi-material-ui/Close'
+import Translations from 'src/layouts/components/Translations'
+
+// const ImgStyled = styled('img')(({ theme }) => ({
+//   width: 120,
+//   height: 120,
+//   marginRight: theme.spacing(5),
+//   borderRadius: theme.shape.borderRadius
+// }))
+
+// const ButtonStyled = styled(Button)<ButtonProps & { component?: ElementType; htmlFor?: string }>(({ theme }) => ({
+//   [theme.breakpoints.down('sm')]: {
+//     width: '100%',
+//     textAlign: 'center'
+//   }
+// }))
+
+// const ResetButtonStyled = styled(Button)<ButtonProps>(({ theme }) => ({
+//   marginLeft: theme.spacing(4),
+//   [theme.breakpoints.down('sm')]: {
+//     width: '100%',
+//     marginLeft: 0,
+//     textAlign: 'center',
+//     marginTop: theme.spacing(4)
+//   }
+// }))
+
+const TabAccount = () => {
+  // ** State
+  const [openAlert, setOpenAlert] = useState<boolean>(false)
+
+  // const [imgSrc, setImgSrc] = useState<string>('/images/avatars/1.png')
+
+  // const onChange = (file: ChangeEvent) => {
+  //   const reader = new FileReader()
+  //   const { files } = file.target as HTMLInputElement
+  //   if (files && files.length !== 0) {
+  //     reader.onload = () => setImgSrc(reader.result as string)
+
+  //     reader.readAsDataURL(files[0])
+  //   }
+  // }
+
+  return (
+    <CardContent>
+      <form>
+        <Grid container spacing={6}>
+          {/* <Grid item xs={12} sx={{ my: 5 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <ImgStyled src={imgSrc} alt='Profile Pic' />
+              <Box>
+                <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
+                  Upload New Photo
+                  <input
+                    hidden
+                    type='file'
+                    onChange={onChange}
+                    accept='image/png, image/jpeg'
+                    id='account-settings-upload-image'
+                  />
+                </ButtonStyled>
+                <ResetButtonStyled color='error' variant='outlined' onClick={() => setImgSrc('/images/avatars/1.png')}>
+                  Reset
+                </ResetButtonStyled>
+                <Typography sx={{ mt: 4 }} component='p' variant='caption'>
+                  Allowed PNG or JPEG. Max size of 800K.
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+            <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel>Role</InputLabel>
+              <Select label='Role' defaultValue='admin'>
+                <MenuItem value='admin'>Admin</MenuItem>
+                <MenuItem value='author'>Author</MenuItem>
+                <MenuItem value='editor'>Editor</MenuItem>
+                <MenuItem value='maintainer'>Maintainer</MenuItem>
+                <MenuItem value='subscriber'>Subscriber</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel>Status</InputLabel>
+              <Select label='Status' defaultValue='active'>
+                <MenuItem value='active'>Active</MenuItem>
+                <MenuItem value='inactive'>Inactive</MenuItem>
+                <MenuItem value='pending'>Pending</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          */}
+
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              aria-readonly
+              label={<Translations text='User Name' />}
+              placeholder='johnDoe'
+              value={localStorage.getItem('userName')}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              aria-readonly
+              type='email'
+              label={<Translations text='Email' />}
+              placeholder='johnDoe@example.com'
+              value={localStorage.getItem('email')}
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              aria-readonly
+              label={<Translations text='Role' />}
+              placeholder='role'
+              value={localStorage.getItem('role_name')}
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              label={<Translations text='Organization' />}
+              placeholder='ABC Pvt. Ltd.'
+              value={localStorage.getItem('organizationName')}
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              label={<Translations text='Organization Group' />}
+              placeholder='orgnization group name '
+              value={localStorage.getItem('organizationGrpName')}
+            />
+          </Grid>
+
+          {openAlert ? (
+            <Grid item xs={12}>
+              <Alert
+                severity='warning'
+                sx={{ '& a': { fontWeight: 400 } }}
+                action={
+                  <IconButton size='small' color='inherit' aria-label='close' onClick={() => setOpenAlert(false)}>
+                    <Close fontSize='inherit' />
+                  </IconButton>
+                }
+              >
+                <AlertTitle sx={{ mb: '.15rem' }}>Your email is not confirmed. Please check your inbox.</AlertTitle>
+                <Link href='/' onClick={(e: SyntheticEvent) => e.preventDefault()}>
+                  Resend Confirmation
+                </Link>
+              </Alert>
+            </Grid>
+          ) : null}
+
+          {/* <Grid item xs={12}>
+            <Button variant='contained' sx={{ mr: 4 }}>
+              Save Changes
+            </Button>
+            <Button type='reset' variant='outlined' color='secondary'>
+              Reset
+            </Button>
+          </Grid> */}
+        </Grid>
+      </form>
+    </CardContent>
+  )
+}
+
+export default TabAccount
