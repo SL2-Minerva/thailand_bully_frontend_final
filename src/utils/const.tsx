@@ -1,12 +1,14 @@
 // export const API_PATH = process.env.NEXT_PUBLIC_APP_ENV === 'localhost' ? 'http://127.0.0.1:8000/api' : 'http://202.44.231.31/api';
 
-import { color } from "d3"
+// import { color } from 'd3'
 
 export const API_PATH =
-  process.env.NEXT_PUBLIC_APP_ENV === 'localhost' ? 'https://cornea-analysis.com/api' : 'https://cornea-analysis.com/api'
+  process.env.NEXT_PUBLIC_APP_ENV === 'localhost'
+    ? 'https://cornea-analysis.com/api'
+    : 'https://cornea-analysis.com/api'
 
-// export const API_PATH = 
-//   process.env.NEXT_PUBLIC_APP_ENV === 'localhost' ? 'http://127.0.0.1:8000/api' : 'http://127.0.0.1:8000/api';
+// export const API_PATH =
+//   process.env.NEXT_PUBLIC_APP_ENV === 'localhost' ? 'http://127.0.0.1:8000/api' : 'http://127.0.0.1:8000/api'
 
 export const lineOptions = {
   responsive: true,
@@ -315,46 +317,46 @@ export const BullyTypeSummaryColors = [
   },
   {
     name: 'NoBully',
-    color: '#E1E1E1',
+    color: '#E1E1E1'
   },
   {
     name: 'Physical Bully',
-    color: '#EF4444',
+    color: '#EF4444'
   },
   {
     name: 'Verbal Bullying',
-    color: '#FF944A',
+    color: '#FF944A'
   },
   {
     name: 'Social Bullying',
-    color: '#6EA5FF',
+    color: '#6EA5FF'
   },
   {
     name: 'Cyber Bullying',
-    color: '#BA9DFE',
+    color: '#BA9DFE'
   }
 ]
 
 export const BullyTypeColorCode = [
   {
     name: 'NoBully',
-    color: '#E1E1E1',
+    color: '#E1E1E1'
   },
   {
     name: 'Physical Bully',
-    color: '#EF4444',
+    color: '#EF4444'
   },
   {
     name: 'Verbal Bullying',
-    color: '#FF944A',
+    color: '#FF944A'
   },
   {
     name: 'Social Bullying',
-    color: '#6EA5FF',
+    color: '#6EA5FF'
   },
   {
     name: 'Cyber Bullying',
-    color: '#BA9DFE',
+    color: '#BA9DFE'
   }
 ]
 
@@ -365,20 +367,20 @@ export const BullyLevelSummaryColors = [
   },
   {
     name: 'Level 0',
-    color: '#E1E1E1',
+    color: '#E1E1E1'
   },
   {
     name: 'Level 1',
-    color: '#B5362D',
+    color: '#B5362D'
   },
   {
     name: 'Level 2',
-    color: '#A81313',
+    color: '#A81313'
   },
   {
     name: 'Level 3',
-    color: '#6F0000',
-  },
+    color: '#6F0000'
+  }
 ]
 
 export const FacebookIcon = '/images/logos/facebook-round.png'

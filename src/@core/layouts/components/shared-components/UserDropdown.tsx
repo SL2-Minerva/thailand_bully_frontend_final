@@ -208,13 +208,13 @@ const UserDropdown = (props: Props) => {
         <Divider sx={{ mt: 0, mb: 1 }} />
         <MenuItem sx={{ p: 2 }}>
           {userInfoTransaction ? (
-            <Box sx={{width: '400px'}}>
-              <Typography variant='caption' sx={{fontSize: '12px'}}>
+            <Box sx={{ width: '400px' }}>
+              <Typography variant='caption' sx={{ fontSize: '12px' }}>
                 Transaction per month start({userInfoTransaction?.transaction_start_at})
               </Typography>
               <Box sx={{ display: 'flex', mt: 2 }}>
                 <ProgressBar value={Number(userInfoTransaction?.transaction_reamining)!} color='#cccc00' />
-                <ProgressBar value={Number(userInfoTransaction?.transaction_limit)!} color='#666cff08' />
+                <ProgressBar value={Number(userInfoTransaction?.transaction_limit)!} color='#2F4F9408' />
               </Box>
             </Box>
           ) : (

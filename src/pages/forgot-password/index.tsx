@@ -133,16 +133,16 @@ const ForgotPassword = () => {
                 size='large'
                 type='submit'
                 variant='contained'
-                sx={{ mb: 5.25, backgroundColor: '#311699', ':hover': { backgroundColor: '#311699' } }}
+                sx={{ mb: 5.25, backgroundColor: '#2F4F94', ':hover': { backgroundColor: '#2F4F94' } }}
               >
                 Send reset link
               </Button>
               {showText ? (
-                <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Link passHref href='/login'>
                     <Typography
                       component={MuiLink}
-                      sx={{ display: 'flex', alignItems: 'center', color: '#311699', justifyContent: 'center' }}
+                      sx={{ display: 'flex', alignItems: 'center', color: '#2F4F94', justifyContent: 'center' }}
                     >
                       <span>We've already set reset link to your email.</span> <br />
                     </Typography>
@@ -170,10 +170,16 @@ const ForgotPassword = () => {
                 <Link passHref href='/login'>
                   <Typography
                     component={MuiLink}
-                    sx={{ display: 'flex', alignItems: 'center', color: '#311699', justifyContent: 'center' }}
+                    sx={{ display: 'flex', alignItems: 'center', color: '#2F4F94', justifyContent: 'center' }}
                   >
                     {/* <ChevronLeft sx={{ mr: 1.5, fontSize: '2rem' }} /> */}
-                   <span> Back to <b><u>Sign In</u></b></span>
+                    <span>
+                      {' '}
+                      Back to{' '}
+                      <b>
+                        <u>Sign In</u>
+                      </b>
+                    </span>
                   </Typography>
                 </Link>
               </Typography>

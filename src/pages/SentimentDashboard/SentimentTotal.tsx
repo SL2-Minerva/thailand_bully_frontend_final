@@ -20,7 +20,7 @@ const SentimentTotal = (props: Props) => {
 
   const whiteColor = '#fff'
   const lineChartYellow = '#d4e157'
-  const lineChartPrimary = '#787EFF'
+  const lineChartPrimary = '#456FCA'
   const lineChartWarning = '#ff9800'
   const labelColor = theme.palette.text.primary
   const borderColor = theme.palette.action.focus
@@ -38,11 +38,11 @@ const SentimentTotal = (props: Props) => {
       {resultReportPermission?.includes('85') ? (
         <>
           <Grid item xs={12}>
-            <Paper id='chart10' sx={{ border: `3px solid #fff`, borderRadius: 1 }} >
+            <Paper id='chart10' sx={{ border: `3px solid #fff`, borderRadius: 1 }}>
               <span style={{ display: 'flex', justifyContent: 'flex-start' }}>
                 <CardHeader
                   title={<Translations text='Total Messages by Sentiment Type' />}
-                  titleTypographyProps={{ variant: 'h6'}}
+                  titleTypographyProps={{ variant: 'h6' }}
                 />
                 <StyledTooltip
                   arrow

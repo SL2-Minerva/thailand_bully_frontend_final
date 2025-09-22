@@ -136,22 +136,32 @@ const VerticalNavHeader = (props: Props) => {
       ) : (
         <Link href='/' passHref>
           <StyledLink>
-              {
-                navCollapsed ? 
-                  <img src='/images/Logo_notext.png' alt='logo' width={35}  height={35} />
-                :
-                ""
-              }
+            {navCollapsed ? (
+              <img
+                src={theme.palette.mode == 'light' ? '/images/Logo_notext.png' : '/images/Logo_notext_dark.png'}
+                alt='logo'
+                width={35}
+                height={35}
+              />
+            ) : (
+              ''
+            )}
             <HeaderTitle variant='h6' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2 }) }}>
-              {
-                navCollapsed ? 
-                ""
-                :
+              {navCollapsed ? (
+                ''
+              ) : (
                 <div className={'logo-sidebar'}>
-                  <img src='/images/Logo_Horizontal2.png' alt='logo' style={{ padding :'15px 15px 15px 0px' }}  />
+                  <img
+                    src={
+                      theme.palette.mode === 'light'
+                        ? '/images/Logo_Horizontal2.png'
+                        : '/images/Logo_Horizontal2_dark.png'
+                    }
+                    alt='logo'
+                    style={{ padding: '15px 15px 15px 0px' }}
+                  />
                 </div>
-              }
-                
+              )}
             </HeaderTitle>
           </StyledLink>
         </Link>

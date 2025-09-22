@@ -21,7 +21,7 @@
 
 //   const whiteColor = '#fff'
 //   const lineChartYellow = '#d4e157'
-//   const lineChartPrimary = '#787EFF'
+//   const lineChartPrimary = '#456FCA'
 //   const lineChartWarning = '#ff9800'
 //   const labelColor = theme.palette.text.primary
 //   const borderColor = theme.palette.action.focus
@@ -230,7 +230,7 @@ const ComparisonCharts = (props: Props) => {
 
   const whiteColor = '#fff'
   const lineChartYellow = '#d4e157'
-  const lineChartPrimary = '#787EFF'
+  const lineChartPrimary = '#456FCA'
   const lineChartWarning = '#ff9800'
   const labelColor = theme.palette.text.primary
   const borderColor = theme.palette.action.focus
@@ -265,7 +265,7 @@ const ComparisonCharts = (props: Props) => {
         <>
           {/* เริ่มต้นส่วนหัวและ tooltip */}
           <Grid item xs={12} id='chart10'>
-            <Paper style={{ border: `3px solid #fff`, borderRadius: 7}}>
+            <Paper style={{ border: `3px solid #fff`, borderRadius: 7 }}>
               <span style={{ display: 'flex', justifyContent: 'flex-start' }}>
                 <CardHeader
                   title={<Translations text='Channel Comparison: Period over Period' />}
@@ -292,12 +292,12 @@ const ComparisonCharts = (props: Props) => {
           {/* จบส่วนหัวและ tooltip */}
 
           {/* แสดงผลลัพธ์ช่องต่างๆ */}
-          <Grid container spacing={2} mt={2} paddingLeft={3} justifyContent="flex-start">
+          <Grid container spacing={2} mt={2} paddingLeft={3} justifyContent='flex-start'>
             {channelData.filter(c => !!c.data).length > 0 ? (
               channelData
                 .filter(channel => !!channel.data)
                 .map((channel, index) => (
-                  <Grid key={index} item xs={12} sm={4} md={12/channelData.filter(c => !!c.data).length}>
+                  <Grid key={index} item xs={12} sm={4} md={12 / channelData.filter(c => !!c.data).length}>
                     <ChannelComparison
                       color={channel.color}
                       trendNumber={channel.data?.percentage}
@@ -305,7 +305,7 @@ const ComparisonCharts = (props: Props) => {
                       totalText={channel.label}
                       totalValue={channel.data?.comparison_value}
                       loading={loadingEngagementBy}
-                      source_image={channel.data?.source_image} 
+                      source_image={channel.data?.source_image}
                     />
                   </Grid>
                 ))

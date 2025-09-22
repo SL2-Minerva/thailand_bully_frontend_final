@@ -36,7 +36,7 @@ import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
 // import 'vis-network/styles/vis-network.css'
 
 import { initialGraph } from '.'
-import { GraphicColors, BullyLevelSummaryColors} from 'src/utils/const'
+import { GraphicColors, BullyLevelSummaryColors } from 'src/utils/const'
 import moment from 'moment'
 import { useTranslation } from 'react-i18next'
 import { GetSNA } from 'src/services/api/dashboards/sna/snaApi'
@@ -129,7 +129,7 @@ const SNAByBullyLevel = () => {
       setLimit(e.target.value)
     } else {
       setPlatformId(e.target.value)
-      localStorage.setItem('platformId', e.target.value);
+      localStorage.setItem('platformId', e.target.value)
     }
   }, [])
   const handleDateSelect = useCallback((e: any) => {
@@ -566,13 +566,13 @@ const SNAByBullyLevel = () => {
             <Typography variant='h5' sx={{ mt: 4, mb: 3, lineHeight: '2rem' }}>
               <Translations text='Social Network Analysis' /> By Bully Level
             </Typography>
-          </Box>   
-                     
+          </Box>
+
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1, marginRight: 3 }}>
                 {levels.map(({ name, color }) => (
-                  <Box key={name} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginLeft: 3}}>
+                  <Box key={name} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginLeft: 3 }}>
                     <Box sx={{ width: 16, height: 16, bgcolor: color, borderRadius: '50%' }} />
                     <Typography variant='body2'>{name}</Typography>
                   </Box>

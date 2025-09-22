@@ -74,7 +74,7 @@ const DeleteConfirmDialog = (props: DialogInfoProps) => {
 
           <Grid container spacing={1}>
             <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button variant='contained' color='error' onClick={handleDelete} sx={{mr: 2}}>
+              <Button variant='contained' color='error' onClick={handleDelete} sx={{ mr: 2 }}>
                 DELETE
               </Button>
               <Button variant='contained' color='inherit' onClick={onClose}>

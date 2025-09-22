@@ -128,7 +128,7 @@ const SNAByBullyType = () => {
       setLimit(e.target.value)
     } else {
       setPlatformId(e.target.value)
-      localStorage.setItem('platformId', e.target.value);
+      localStorage.setItem('platformId', e.target.value)
     }
   }, [])
 
@@ -238,7 +238,6 @@ const SNAByBullyType = () => {
     height: '700px',
     autoResize: false
   }
-
 
   useEffect(() => {
     if (errorUserPermission) {
@@ -574,14 +573,14 @@ const SNAByBullyType = () => {
             <Grid item xs={12}>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1, marginRight: 3 }}>
                 {type.map(({ name, color }) => (
-                  <Box key={name} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginLeft: 3}}>
+                  <Box key={name} sx={{ display: 'flex', alignItems: 'center', gap: 1, marginLeft: 3 }}>
                     <Box sx={{ width: 16, height: 16, bgcolor: color, borderRadius: '50%' }} />
                     <Typography variant='body2'>{name}</Typography>
                   </Box>
                 ))}
               </Box>
             </Grid>
-            
+
             <Grid item xs={12}>
               {resultSNAGraph?.nodes?.length > 0 ? (
                 <Graph
@@ -603,10 +602,9 @@ const SNAByBullyType = () => {
                     },
                     stabilized: function () {
                       network?.fit()
-                    }                  
+                    }
                   }}
                   getNetwork={setNetwork}
-
                 />
               ) : (
                 <div

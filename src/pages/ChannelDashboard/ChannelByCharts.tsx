@@ -23,12 +23,12 @@ interface Props {
 }
 
 const ChannelByCharts = (props: Props) => {
-  const { apiParams, resultReportPermission, params, highlight,  setIsLoading, quickViewData, setQuickViewData } = props
+  const { apiParams, resultReportPermission, params, highlight, setIsLoading, quickViewData, setQuickViewData } = props
   const theme = useTheme()
 
   const whiteColor = '#fff'
   const lineChartYellow = '#d4e157'
-  const lineChartPrimary = '#787EFF'
+  const lineChartPrimary = '#456FCA'
   const lineChartWarning = '#ff9800'
   const labelColor = theme.palette.text.primary
   const borderColor = theme.palette.action.focus

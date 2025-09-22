@@ -245,11 +245,24 @@ const ResetPassword = () => {
               />
 
               {password && confirmPassword && !showErrorText ? (
-                <Button onClick={submitData} fullWidth size='large' type='submit' variant='contained' sx={{ mb: 5.25, backgroundColor: '#311699', ':hover': { backgroundColor: '#311699' } }}>
+                <Button
+                  onClick={submitData}
+                  fullWidth
+                  size='large'
+                  type='submit'
+                  variant='contained'
+                  sx={{ mb: 5.25, backgroundColor: '#2F4F94', ':hover': { backgroundColor: '#2F4F94' } }}
+                >
                   Reset Password
                 </Button>
               ) : (
-                <Button fullWidth size='large' variant='contained' color='secondary' sx={{ mb: 5.25, backgroundColor: '#311699', ':hover': { backgroundColor: '#311699' } }}>
+                <Button
+                  fullWidth
+                  size='large'
+                  variant='contained'
+                  color='secondary'
+                  sx={{ mb: 5.25, backgroundColor: '#2F4F94', ':hover': { backgroundColor: '#2F4F94' } }}
+                >
                   Reset Password
                 </Button>
               )}
@@ -272,7 +285,7 @@ const ResetPassword = () => {
                   <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Typography
                       component={MuiLink}
-                      sx={{ display: 'flex', alignItems: 'center', color: '#311699', justifyContent: 'center' }}
+                      sx={{ display: 'flex', alignItems: 'center', color: '#2F4F94', justifyContent: 'center' }}
                     >
                       <span>Your password is updated successfully</span>
                     </Typography>
@@ -281,9 +294,15 @@ const ResetPassword = () => {
                     <Link passHref href='/login'>
                       <Typography
                         component={MuiLink}
-                        sx={{ display: 'flex', alignItems: 'center', color: '#311699', justifyContent: 'center' }}
+                        sx={{ display: 'flex', alignItems: 'center', color: '#2F4F94', justifyContent: 'center' }}
                       >
-                        <span> Back to <b><u>Sign In</u></b></span>
+                        <span>
+                          {' '}
+                          Back to{' '}
+                          <b>
+                            <u>Sign In</u>
+                          </b>
+                        </span>
                       </Typography>
                     </Link>
                   </Typography>

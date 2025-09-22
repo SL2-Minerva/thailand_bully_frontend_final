@@ -124,27 +124,29 @@ const LoginPage = () => {
       <Box
         className='content-center'
         sx={{
-          background:
-            ' rgba(55,26,168,1) linear-gradient(to bottom, rgba(102,74,207,1) 0%, rgba(55,26,168,1) 39%,rgba(2,0,36,1) 100%)',
-          backgroundImage:
-            'linear-gradient(to bottom, rgba(245, 246, 252, 0.24), rgba(2,0,36,1)), url(/images/cornea.png)'
+          // background: ' #122E6F linear-gradient(to bottom, #456FCA, #2F4F94,#1F3D80)'
+
+          background: 'linear-gradient(to bottom, #FFFFFF 40%, #1F3D80 40%)'
+
+          // backgroundImage:
+          //   'linear-gradient(to bottom, rgba(245, 246, 252, 0.24), rgba(2,0,36,1)), url(/images/cornea.png)'
         }}
       >
-        <Card sx={{ zIndex: 1 }}>
+        <Card sx={{ zIndex: 1, borderRadius: '0px', height: '70vh', alignContent: 'center' }}>
           <CardContent sx={{ p: theme => `${theme.spacing(13, 7, 6.5)} !important` }}>
-            <Box sx={{ mb: 17 }}>
+            {/* <Box sx={{ mb: 17 }}>
               <div className={'logo-login'}>
                 <img src='/images/Logo_notext.png' alt='logo' />
               </div>
-            </Box>
+            </Box> */}
             <Box sx={{ mb: 7 }}>
-              <Typography variant='h5' sx={{ color: '#0a0e3a', textAlign: 'center' }}>
-                Welcome to Cornea
+              <Typography variant='h5' sx={{ color: '#122E6F', textAlign: 'center', fontWeight: '600' }}>
+                Login
               </Typography>
             </Box>
 
             <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
-              <FormControl fullWidth sx={{ mb: 4 }}>
+              <FormControl fullWidth sx={{ mb: 8 }}>
                 <Controller
                   name='username'
                   control={control}
@@ -214,24 +216,45 @@ const LoginPage = () => {
                 }}
               >
                 <span></span>
-                 
+
                 {/* <Link passHref href='/forgot-password'>
-                  <Typography component={MuiLink} variant='body2' sx={{ color: '#311699' }}>
+                  <Typography component={MuiLink} variant='body2' sx={{ color: '#2F4F94' }}>
                     <u>Forgot my password</u>
                   </Typography>
                 </Link> */}
               </Box>
 
-              <Button
-                fullWidth
-                size='large'
-                type='submit'
-                variant='contained'
-                sx={{ mb: 7, mt: 3, backgroundColor: '#311699', ':hover': { backgroundColor: '#311699' } }}
-              >
-                Login
-              </Button>
+              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Button
+                  size='large'
+                  type='submit'
+                  variant='contained'
+                  sx={{
+                    mb: 7,
+                    mt: 3,
+                    backgroundColor: '#2F4F94',
+                    ':hover': { backgroundColor: '#2F4F94' },
+                    width: '8vw'
+                  }}
+                >
+                  Login
+                </Button>
+              </Box>
             </form>
+          </CardContent>
+        </Card>
+        <Card sx={{ backgroundColor: '#2F4F94', height: '70vh', alignContent: 'center', borderRadius: '0px' }}>
+          <CardContent sx={{ p: theme => `${theme.spacing(13, 7, 6.5)} !important` }}>
+            <Box>
+              <Typography variant='h3' sx={{ color: '#FFFFFF', textAlign: 'center', mb: '10px' }}>
+                WELCOME !
+              </Typography>
+            </Box>
+            <Box sx={{ mb: 7 }}>
+              <Typography sx={{ color: '#FFFFFF', textAlign: 'center', fontSize: '15px' }}>
+                Login to SocialGuard
+              </Typography>
+            </Box>
           </CardContent>
         </Card>
         {/* <FooterIllustrationsV1 /> */}

@@ -51,7 +51,7 @@ const BullyCharts = (data: Props) => {
 
   const whiteColor = '#fff'
   const lineChartYellow = '#d4e157'
-  const lineChartPrimary = '#787EFF'
+  const lineChartPrimary = '#456FCA'
   const lineChartWarning = '#ff9800'
   const labelColor = theme.palette.text.primary
   const borderColor = theme.palette.action.focus
@@ -73,7 +73,7 @@ const BullyCharts = (data: Props) => {
     resultBullyTypeByAccount,
     resultBullyTypeByChannel,
     resultBullyTypeByDay,
-    
+
     // resultBullyTypeByDevice,
     resultBullyTypeBySenitment,
     resultBullyTypeByTime,
@@ -520,7 +520,7 @@ const BullyCharts = (data: Props) => {
                     handleBullyType('level')
                   }}
                 >
-                  <span style={{ color: bullyType === 'level' ? 'white' : '#626376' }}>Bully Level</span> 
+                  <span style={{ color: bullyType === 'level' ? 'white' : '#626376' }}>Bully Level</span>
                 </Button>
                 <Button
                   variant='contained'
@@ -573,7 +573,7 @@ const BullyCharts = (data: Props) => {
         ) : (
           ''
         )}
-        
+
         {/* <QuickView setHighlight={setHighlight} setShowQuickView={setShowQuickView} /> */}
 
         {/* <QuickViewModal

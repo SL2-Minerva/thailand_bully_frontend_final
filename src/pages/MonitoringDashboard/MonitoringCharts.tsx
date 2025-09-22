@@ -56,7 +56,7 @@ const MonitoringCharts = (data: Props) => {
 
   const whiteColor = '#fff'
   const lineChartYellow = '#d4e157'
-  const lineChartPrimary = '#787EFF'
+  const lineChartPrimary = '#456FCA'
   const lineChartWarning = '#ff9800'
   const labelColor = theme.palette.text.primary
   const borderColor = theme.palette.action.focus
