@@ -3,7 +3,6 @@
 // import dynamic from 'next/dynamic'
 // import { useTranslation } from 'react-i18next'
 
-
 // const ReactQuill = dynamic(() => import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> })
 
 // interface Props {
@@ -14,7 +13,6 @@
 //   const { resultContentList } = props
 //   const {t} = useTranslation();
 
-
 //   return (
 //     <Grid container spacing={3}>
 //       {(resultContentList || []).map((contents: any, index: any) => {
@@ -22,7 +20,7 @@
 //           <Grid item xs={12} key={index}>
 //             <Card
 //               sx={{
-//                 backgroundImage: `url(${'https://cornea-ai.com/images/' + contents.picture})`,
+//                 backgroundImage: `url(${'https://socialguard.online/images/' + contents.picture})`,
 //                 backgroundPosition: 'center',
 //                 backgroundSize: 'contain',
 //                 backgroundPositionX: 'center',
@@ -81,7 +79,7 @@ interface Props {
 
 const ContentAnnouncement = (props: Props) => {
   const { resultContentList } = props
-  
+
   return (
     <Grid container spacing={3}>
       {(resultContentList || []).map((contents: any, index: any) => {
@@ -94,17 +92,17 @@ const ContentAnnouncement = (props: Props) => {
                 alignItems: 'center',
 
                 height: '93%',
-                overflow: 'hidden',
+                overflow: 'hidden'
               }}
-            > 
+            >
               <img
-                src={'https://cornea-ai.com/images/banners/' + contents.picture}
-                alt="content picture"
+                src={'https://socialguard.online/images/banners/' + contents.picture}
+                alt='content picture'
                 style={{
                   width: '100%',
-                  height: '100%',
+                  height: '100%'
 
-                  // objectFit: 'contain', 
+                  // objectFit: 'contain',
                 }}
               />
             </Card>
@@ -117,14 +115,11 @@ const ContentAnnouncement = (props: Props) => {
 
 export default ContentAnnouncement
 
-
-
 // import { Card, CardContent, Grid, Typography } from '@mui/material'
 // import 'react-quill/dist/quill.bubble.css'
 
 // // import dynamic from 'next/dynamic'
 // import { useTranslation } from 'react-i18next'
-
 
 // // const ReactQuill = dynamic(() => import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> })
 
@@ -136,7 +131,6 @@ export default ContentAnnouncement
 //   const { resultContentList } = props
 //   const {t} = useTranslation();
 
-
 //   return (
 //     <Grid container spacing={3}>
 //       {(resultContentList || []).map((contents: any, index: any) => {
@@ -144,7 +138,7 @@ export default ContentAnnouncement
 //           <Grid item xs={12} key={index}>
 //             <Card
 //               sx={{
-//                 backgroundImage: `url(${'https://cornea-ai.com/images/' + contents.picture})`,
+//                 backgroundImage: `url(${'https://socialguard.online/images/' + contents.picture})`,
 //                 backgroundPosition: 'center',
 //                 backgroundSize: 'contain',
 //                 backgroundPositionX: 'center',
@@ -174,11 +168,11 @@ export default ContentAnnouncement
 //                     {/* <h2>
 //                       <ReactQuill value={contents.title} readOnly={true} theme='bubble' />
 //                     </h2> */}
-//                       <div dangerouslySetInnerHTML={{ __html: t('Header') + ": " + contents.title }} />     
-                
+//                       <div dangerouslySetInnerHTML={{ __html: t('Header') + ": " + contents.title }} />
+
 //                     <Grid>
 //                       {/* <ReactQuill value={contents.content_text} readOnly={true} theme='bubble' /> */}
-//                       <div dangerouslySetInnerHTML={{ __html: t('Version') + ": " + contents.content_text || '-' }} /> 
+//                       <div dangerouslySetInnerHTML={{ __html: t('Version') + ": " + contents.content_text || '-' }} />
 //                     </Grid>
 //                   </Grid>
 //                 </Grid>
@@ -192,7 +186,6 @@ export default ContentAnnouncement
 // }
 
 // export default ContentAnnouncement
-
 
 // import React, { useState, useMemo } from 'react'
 // import { Card, CardContent, Grid, Typography, Box, Dialog, DialogContent, IconButton, Pagination } from '@mui/material'
@@ -223,19 +216,19 @@ export default ContentAnnouncement
 //     const totalPages = Math.ceil(sorted.length / itemsPerPage)
 //     const startIndex = (currentPage - 1) * itemsPerPage
 //     const paginatedItems = sorted.slice(startIndex, startIndex + itemsPerPage)
-    
+
 //     return { items: paginatedItems, totalPages, totalItems: sorted.length }
 //   }, [resultContentList, currentPage])
 
 //   const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
 //     setCurrentPage(page)
 //   }
-  
+
 //   const handleOpenPopup = (news: NewsItem) => {
 //     setSelectedNews(news)
 //     setOpenPopup(true)
 //   }
-  
+
 //   const handleClosePopup = () => {
 //     setOpenPopup(false)
 //     setSelectedNews(null)
@@ -246,15 +239,15 @@ export default ContentAnnouncement
 //     const tempDiv = document.createElement('div')
 //     tempDiv.innerHTML = html
 //     const textContent = tempDiv.textContent || tempDiv.innerText || ''
-    
-//     return textContent.length > maxLength 
-//       ? textContent.substring(0, maxLength) + '...' 
+
+//     return textContent.length > maxLength
+//       ? textContent.substring(0, maxLength) + '...'
 //       : textContent
 //   }
-  
+
 //   return (
-//     <Box sx={{ 
-//       width: '100%', 
+//     <Box sx={{
+//       width: '100%',
 //       fontFamily: 'sans-serif',
 //       minHeight: '500px', // กำหนดความสูงขั้นต่ำ
 //       display: 'flex',
@@ -263,11 +256,11 @@ export default ContentAnnouncement
 //       {/* News List Container */}
 //       <Box sx={{ flex: 1 }}>
 //         {sortedAndPaginatedNews.items?.map((item, index) => (
-//           <Card 
-//             key={item.id || index} 
+//           <Card
+//             key={item.id || index}
 //             onClick={() => handleOpenPopup(item)}
-//             sx={{ 
-//               mb: 3, 
+//             sx={{
+//               mb: 3,
 //               borderRadius: '12px',
 //               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
 //               border: '1px solid #e0e0e0',
@@ -285,7 +278,7 @@ export default ContentAnnouncement
 //             <Grid container spacing={3}>
 //               {/* Image Section */}
 //               <Grid item xs={12} sm={4} md={3}>
-//                 <Box sx={{ 
+//                 <Box sx={{
 //                   width: '100%',
 //                   height: '180px', // ลดความสูงลง
 //                   bgcolor: '#f5f5f5',
@@ -307,8 +300,8 @@ export default ContentAnnouncement
 //                       }}
 //                     />
 //                   ) : (
-//                     <Typography sx={{ 
-//                       color: '#999', 
+//                     <Typography sx={{
+//                       color: '#999',
 //                       fontSize: '14px',
 //                       fontWeight: 'normal',
 //                       textAlign: 'center'
@@ -318,10 +311,10 @@ export default ContentAnnouncement
 //                   )}
 //                 </Box>
 //               </Grid>
-              
+
 //               {/* Content Section */}
 //               <Grid item xs={12} sm={8} md={9}>
-//                 <CardContent sx={{ 
+//                 <CardContent sx={{
 //                   p: 0,
 //                   height: '180px', // จำกัดความสูงให้เท่ากับรูป
 //                   display: 'flex',
@@ -329,11 +322,11 @@ export default ContentAnnouncement
 //                 }}>
 //                   <Box>
 //                     {/* Title */}
-//                     <Typography 
-//                       variant="h6" 
-//                       sx={{ 
+//                     <Typography
+//                       variant="h6"
+//                       sx={{
 //                         fontFamily: 'sans-serif',
-//                         fontWeight: 600, 
+//                         fontWeight: 600,
 //                         mb: 1,
 //                         fontSize: '18px',
 //                         lineHeight: 1.3,
@@ -345,16 +338,16 @@ export default ContentAnnouncement
 //                       }}
 //                       dangerouslySetInnerHTML={{ __html: item.title }}
 //                     />
-                    
+
 //                     {/* Date */}
-//                     <Typography 
-//                       variant="body2" 
-//                       color="text.secondary" 
-//                       sx={{ 
+//                     <Typography
+//                       variant="body2"
+//                       color="text.secondary"
+//                       sx={{
 //                         mb: 2,
-//                         mt: -6, 
-//                         fontSize: '12px', 
-//                         fontWeight: 'normal' 
+//                         mt: -6,
+//                         fontSize: '12px',
+//                         fontWeight: 'normal'
 //                       }}
 //                     >
 //                       {new Date(item.date).toLocaleDateString('th-TH', {
@@ -364,10 +357,10 @@ export default ContentAnnouncement
 //                       })}
 //                     </Typography>
 //                   </Box>
-                  
+
 //                   {/* Content Preview */}
-//                   <Typography 
-//                     variant="body2" 
+//                   <Typography
+//                     variant="body2"
 //                     sx={{
 //                       mt: '8px',
 //                       fontSize: '13px',
@@ -392,14 +385,14 @@ export default ContentAnnouncement
 
 //       {/* Pagination */}
 //       {sortedAndPaginatedNews.totalPages > 1 && (
-//         <Box sx={{ 
-//           display: 'flex', 
-//           justifyContent: 'center', 
+//         <Box sx={{
+//           display: 'flex',
+//           justifyContent: 'center',
 //           mt: 4,
 //           pt: 2,
 //           borderTop: '1px solid #e0e0e0'
 //         }}>
-//           <Pagination 
+//           <Pagination
 //             count={sortedAndPaginatedNews.totalPages}
 //             page={currentPage}
 //             onChange={handlePageChange}
@@ -408,7 +401,7 @@ export default ContentAnnouncement
 //           />
 //         </Box>
 //       )}
-      
+
 //       {/* News Detail Popup */}
 //       <Dialog
 //         open={openPopup}
@@ -447,9 +440,9 @@ export default ContentAnnouncement
 //         >
 //           <Close fontSize="medium" />
 //         </IconButton>
-        
-//         <DialogContent sx={{ 
-//           p: 0, 
+
+//         <DialogContent sx={{
+//           p: 0,
 //           overflow: 'auto',
 //           '&::-webkit-scrollbar': {
 //             width: '6px'
@@ -489,8 +482,8 @@ export default ContentAnnouncement
 //                     }}
 //                   />
 //                 ) : (
-//                   <Typography sx={{ 
-//                     color: '#999', 
+//                   <Typography sx={{
+//                     color: '#999',
 //                     fontSize: '18px',
 //                     fontWeight: 'normal'
 //                   }}>
@@ -498,14 +491,14 @@ export default ContentAnnouncement
 //                   </Typography>
 //                 )}
 //               </Box>
-              
+
 //               {/* Content Section */}
 //               <Box sx={{ p: 4 }}>
 //                 {/* Title */}
-//                 <Typography 
-//                   variant="h4" 
-//                   component="h2" 
-//                   sx={{ 
+//                 <Typography
+//                   variant="h4"
+//                   component="h2"
+//                   sx={{
 //                     fontWeight: 700,
 //                     mb: -6,
 //                     fontSize: { xs: '24px', sm: '28px' },
@@ -514,16 +507,16 @@ export default ContentAnnouncement
 //                   }}
 //                   dangerouslySetInnerHTML={{ __html: selectedNews.title }}
 //                 />
-                
+
 //                 {/* Date */}
-//                 <Typography 
-//                   variant="body1" 
-//                   color="text.secondary" 
-//                   sx={{ 
+//                 <Typography
+//                   variant="body1"
+//                   color="text.secondary"
+//                   sx={{
 //                     display: 'block',
 //                     mb: 6,
 //                     fontSize: '14px',
-//                     fontWeight: 'normal', 
+//                     fontWeight: 'normal',
 //                     fontFamily: 'sans-serif'
 //                   }}
 //                 >
@@ -533,10 +526,10 @@ export default ContentAnnouncement
 //                     day: 'numeric'
 //                   })}
 //                 </Typography>
-                
+
 //                 {/* Full Content */}
 //                 <Box>
-//                   <div 
+//                   <div
 //                     dangerouslySetInnerHTML={{ __html: selectedNews.content_text || 'ไม่มีเนื้อหา' }}
 //                     style={{
 //                       fontWeight: 'normal',

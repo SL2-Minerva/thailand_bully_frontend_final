@@ -118,15 +118,12 @@ const App = (props: ExtendedAppProps) => {
     <Provider store={store}>
       <CacheProvider value={emotionCache}>
         <Head>
-          <title>{`cornea-ai`}</title>
-          <meta
-            name='description'
-            content={`${themeConfig.templateName}`}
-          />
-          
+          <title>{`SocialGuard`}</title>
+          <meta name='description' content={`${themeConfig.templateName}`} />
+
           {/* <meta name='keywords' content='Material Design, MUI, Admin Template, React Admin Template' /> */}
           <meta name='viewport' content='initial-scale=1, width=device-width' />
-          <meta httpEquiv='Content-Security-Policy' content="upgrade-insecure-requests"></meta>
+          <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests'></meta>
         </Head>
 
         <AuthProvider>

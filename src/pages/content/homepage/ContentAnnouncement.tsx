@@ -3,7 +3,6 @@
 // import dynamic from 'next/dynamic'
 // import { useTranslation } from 'react-i18next'
 
-
 // const ReactQuill = dynamic(() => import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> })
 
 // interface Props {
@@ -14,7 +13,6 @@
 //   const { resultContentList } = props
 //   const {t} = useTranslation();
 
-
 //   return (
 //     <Grid container spacing={3}>
 //       {(resultContentList || []).map((contents: any, index: any) => {
@@ -22,7 +20,7 @@
 //           <Grid item xs={12} key={index}>
 //             <Card
 //               sx={{
-//                 backgroundImage: `url(${'https://cornea-ai.com/images/' + contents.picture})`,
+//                 backgroundImage: `url(${'https://socialguard.online/images/' + contents.picture})`,
 //                 backgroundPosition: 'center',
 //                 backgroundSize: 'contain',
 //                 backgroundPositionX: 'center',
@@ -81,7 +79,7 @@ interface Props {
 
 const ContentAnnouncement = (props: Props) => {
   const { resultContentList } = props
-  
+
   return (
     <Grid container spacing={3}>
       {(resultContentList || []).map((contents: any, index: any) => {
@@ -94,17 +92,17 @@ const ContentAnnouncement = (props: Props) => {
                 alignItems: 'center',
 
                 height: '93%',
-                overflow: 'hidden',
+                overflow: 'hidden'
               }}
-            > 
+            >
               <img
-                src={'https://cornea-ai.com/images/banners/' + contents.picture}
-                alt="content picture"
+                src={'https://socialguard.online/images/banners/' + contents.picture}
+                alt='content picture'
                 style={{
                   width: '100%',
-                  height: '100%',
+                  height: '100%'
 
-                  // objectFit: 'contain', 
+                  // objectFit: 'contain',
                 }}
               />
             </Card>
@@ -123,7 +121,6 @@ export default ContentAnnouncement
 // // import dynamic from 'next/dynamic'
 // import { useTranslation } from 'react-i18next'
 
-
 // // const ReactQuill = dynamic(() => import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> })
 
 // interface Props {
@@ -134,7 +131,6 @@ export default ContentAnnouncement
 //   const { resultContentList } = props
 //   const {t} = useTranslation();
 
-
 //   return (
 //     <Grid container spacing={3}>
 //       {(resultContentList || []).map((contents: any, index: any) => {
@@ -142,7 +138,7 @@ export default ContentAnnouncement
 //           <Grid item xs={12} key={index}>
 //             <Card
 //               sx={{
-//                 backgroundImage: `url(${'https://cornea-ai.com/images/' + contents.picture})`,
+//                 backgroundImage: `url(${'https://socialguard.online/images/' + contents.picture})`,
 //                 backgroundPosition: 'center',
 //                 backgroundSize: 'contain',
 //                 backgroundPositionX: 'center',
@@ -172,11 +168,11 @@ export default ContentAnnouncement
 //                     {/* <h2>
 //                       <ReactQuill value={contents.title} readOnly={true} theme='bubble' />
 //                     </h2> */}
-//                       <div dangerouslySetInnerHTML={{ __html: t('Header') + ": " + contents.title }} />     
-                
+//                       <div dangerouslySetInnerHTML={{ __html: t('Header') + ": " + contents.title }} />
+
 //                     <Grid>
 //                       {/* <ReactQuill value={contents.content_text} readOnly={true} theme='bubble' /> */}
-//                       <div dangerouslySetInnerHTML={{ __html: t('Version') + ": " + contents.content_text || '-' }} /> 
+//                       <div dangerouslySetInnerHTML={{ __html: t('Version') + ": " + contents.content_text || '-' }} />
 //                     </Grid>
 //                   </Grid>
 //                 </Grid>
@@ -190,7 +186,6 @@ export default ContentAnnouncement
 // }
 
 // export default ContentAnnouncement
-
 
 // import { Card, Box, IconButton, Typography } from '@mui/material'
 // import { useState, useMemo } from 'react'
@@ -407,5 +402,3 @@ export default ContentAnnouncement
 // }
 
 // export default ContentAnnouncement
-
-

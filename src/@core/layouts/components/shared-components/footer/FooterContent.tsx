@@ -17,7 +17,7 @@ const FooterContent = () => {
         {/* <Box component='span' sx={{ color: 'error.main' }}>
           
         </Box> */}
-        <Link target='_blank' href='https://cornea-ai.com/'></Link>
+        <Link target='_blank' href='https://socialguard.online/'></Link>
       </Typography>
     </Box>
   )

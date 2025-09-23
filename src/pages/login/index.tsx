@@ -139,9 +139,19 @@ const LoginPage = () => {
                 <img src='/images/Logo_notext.png' alt='logo' />
               </div>
             </Box> */}
-            <Box sx={{ mb: 7 }}>
+            {/* <Box sx={{ mb: 7 }}>
               <Typography variant='h5' sx={{ color: '#122E6F', textAlign: 'center', fontWeight: '600' }}>
-                Login
+                Log in
+              </Typography>
+            </Box> */}
+            <Box>
+              <Typography variant='h4' sx={{ color: '#122E6F', textAlign: 'center', fontWeight: '700' }}>
+                WELCOME
+              </Typography>
+            </Box>
+            <Box sx={{ mb: 7 }}>
+              <Typography sx={{ color: '#122E6F', textAlign: 'center', fontWeight: '500' }}>
+                Log in to SocialGuard
               </Typography>
             </Box>
 
@@ -234,10 +244,11 @@ const LoginPage = () => {
                     mt: 3,
                     backgroundColor: '#2F4F94',
                     ':hover': { backgroundColor: '#2F4F94' },
-                    width: '8vw'
+                    width: '8vw',
+                    textTransform: 'none'
                   }}
                 >
-                  Login
+                  Log in
                 </Button>
               </Box>
             </form>
@@ -245,16 +256,25 @@ const LoginPage = () => {
         </Card>
         <Card sx={{ backgroundColor: '#2F4F94', height: '70vh', alignContent: 'center', borderRadius: '0px' }}>
           <CardContent sx={{ p: theme => `${theme.spacing(13, 7, 6.5)} !important` }}>
-            <Box>
-              <Typography variant='h3' sx={{ color: '#FFFFFF', textAlign: 'center', mb: '10px' }}>
-                WELCOME !
+            <Box style={{ display: 'Flex', justifyContent: 'center' }}>
+              {/* <img src='' alt='' /> */}
+              {/* <img src='/images/Logo_notext_dark.png' alt='logo' style={{ width: '30%', paddingBottom: '10px' }} /> */}
+              <img
+                src='/images/Logo_Horizontal2_dark.png'
+                alt='logo'
+                style={{ width: '100%', paddingBottom: '10px', paddingRight: '20px' }}
+              />
+            </Box>
+            {/* <Box>
+              <Typography variant='h4' sx={{ color: '#FFFFFF', textAlign: 'center', mb: '10px' }}>
+                WELCOME
               </Typography>
             </Box>
             <Box sx={{ mb: 7 }}>
               <Typography sx={{ color: '#FFFFFF', textAlign: 'center', fontSize: '15px' }}>
-                Login to SocialGuard
+                Log in to SocialGuard
               </Typography>
-            </Box>
+            </Box> */}
           </CardContent>
         </Card>
         {/* <FooterIllustrationsV1 /> */}

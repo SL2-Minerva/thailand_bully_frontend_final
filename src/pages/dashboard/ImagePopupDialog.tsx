@@ -46,7 +46,7 @@ const ImagePopupDialog = ({ showDialog, setShowDialog, imageUrl, title }: ImageP
           {/* <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <img
 
-              src={'https://cornea-ai.com/images/picture_post/' + imageUrl}
+              src={'https://socialguard.online/images/picture_post/' + imageUrl}
               alt={title || 'Image'} 
               style={{ 
                 maxWidth: '100%', 
@@ -59,7 +59,7 @@ const ImagePopupDialog = ({ showDialog, setShowDialog, imageUrl, title }: ImageP
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '200px' }}>
             {imageUrl ? (
               <img
-                src={'https://cornea-ai.com/images/picture_post/' + imageUrl}
+                src={'https://socialguard.online/images/picture_post/' + imageUrl}
                 alt={title || 'Image'}
                 style={{
                   maxWidth: '100%',
