@@ -433,7 +433,7 @@ const PrivacyNotice = () => {
               </Typography>
               <Typography variant='body1' mt={1}>
                 From time to time, we may use the data we collect to market our services to our users. This includes
-                sending users communications about Cornea services, features, promotions, sweepstakes, studies, surveys,
+                sending users communications about SocialGuard services, features, promotions, sweepstakes, studies, surveys,
                 news, updates, and events. We may communicate such marketing to you by post, telephone call, short
                 message service, online messaging service, push notification and email.
               </Typography>

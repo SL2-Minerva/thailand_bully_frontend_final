@@ -130,7 +130,8 @@ const Contents = (props: Props) => {
           </Card>
         )
       })}
-      <Typography variant="h4" style={{ padding: '1rem', fontWeight: 'bold', textAlign: 'center', marginTop: '20px' }}>
+      
+      {/* <Typography variant="h4" style={{ padding: '1rem', fontWeight: 'bold', textAlign: 'center', marginTop: '20px' }}>
         <Translations text='แนะนำการใช้งานระบบ Cornea' />
       </Typography>
       <iframe 
@@ -138,7 +139,7 @@ const Contents = (props: Props) => {
         src="https://www.youtube.com/embed/JkRgMhocdCI"
         allowFullScreen
         >
-      </iframe>
+      </iframe> */}
     </div>
   )
 }

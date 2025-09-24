@@ -74,7 +74,7 @@ const SNA = () => {
   const router = useRouter()
 
   const { errorUserPermission } = UserPermission()
-  const { resultCampaiganList } = CampaignLists()
+  const { resultCampaiganList } = CampaignLists(status)
   const { result_source_list } = SourceService()
 
   const { resultSNAGraph, loadingSNAGraph } = GetSNA(
