@@ -1,4 +1,4 @@
-import { Ref, useState, forwardRef, ReactElement, useCallback, useEffect } from 'react'
+import { Ref, useState, forwardRef, ReactElement, useEffect } from 'react' // useCallback
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -29,7 +29,8 @@ import { format } from 'date-fns'
 // ** Icons Imports
 import Plus from 'mdi-material-ui/Plus'
 import Close from 'mdi-material-ui/Close'
-import DomainList from 'src/services/api/domains/DomainAPI'
+
+// import DomainList from 'src/services/api/domains/DomainAPI'
 import KeywordForm, { GenerateRandomColor } from './KeywordForm'
 import axios from 'axios'
 import authConfig from '../../../configs/auth'
@@ -170,10 +171,10 @@ const DialogCampaign = (props: DialogInfoProps) => {
     setKeywords(results)
   }
 
-  const { result_domain_list } = DomainList()
-  const handleDomain = useCallback((e: SelectChangeEvent) => {
-    setDomain(e.target.value)
-  }, [])
+  // const { result_domain_list } = DomainList()
+  // const handleDomain = useCallback((e: SelectChangeEvent) => {
+  //   setDomain(e.target.value)
+  // }, [])
 
   function handleCampaignName(event: any) {
     setCampaignName(event.target.value)
@@ -457,7 +458,8 @@ const DialogCampaign = (props: DialogInfoProps) => {
                   id='textarea-outlined-controlled'
                 />
               </Grid>
-              <Grid item sm={12} xs={12}>
+
+              {/* <Grid item sm={12} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='plan-select'>
                     <Translations text='Select Domain' />
@@ -478,7 +480,7 @@ const DialogCampaign = (props: DialogInfoProps) => {
                     ))}
                   </Select>
                 </FormControl>
-              </Grid>
+              </Grid> */}
 
               <Grid item sm={12} xs={12}>
                 {/* <Typography sx={{ mb: 2, fontWeight: 500 }}>Social Visualization</Typography> */}
