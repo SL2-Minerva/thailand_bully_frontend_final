@@ -4,9 +4,9 @@ import { Box, Card, Dialog, DialogContent, IconButton, Typography, Grid, LinearP
 import Close from 'mdi-material-ui/Close'
 import Graph from 'react-graph-vis'
 
-import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
+// import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
 
-// import 'vis-network/styles/vis-network.css'
+import 'vis-network/styles/vis-network.css'
 
 import { GetNetworkGraph } from 'src/services/api/dashboards/overall/overallDashboardApi'
 import Translations from 'src/layouts/components/Translations'

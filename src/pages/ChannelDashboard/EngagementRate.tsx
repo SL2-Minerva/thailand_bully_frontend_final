@@ -248,7 +248,7 @@ const EngagementRate = (props: LineProps) => {
   const reportNo = '3.2.013'
 
   return (
-    <Paper style={{ minHeight: 518, border: `3px solid #fff`, borderRadius: 7 }} >
+    <Paper style={{ minHeight: 550, border: `3px solid #fff`, borderRadius: 7 }} >
       {loading && <LinearProgress style={{ width: '100%' }} />}
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
         <span style={{ display: 'flex', justifyContent: 'flex-start' }}>
@@ -319,7 +319,38 @@ const EngagementRate = (props: LineProps) => {
             <Translations text='no data' />
           </div>
         ) : (
-          <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
+         <>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                height: 400,
+                overflow: 'visible'
+              }}
+            >
+              <div
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                  textAlign: 'center',
+                  whiteSpace: 'nowrap',
+                  color: '#555',
+                  fontSize: 13,
+                  minWidth: 20
+                }}
+              >
+                <Translations text='Engagement' />
+              </div>
+
+              <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
+                <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
+              </div>
+            </div>
+            <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 10 }}>
+              <Translations text='Channel' />
+            </div>
+          </>
         )}
         {showDetail ? (
           <MessageDetailChannel

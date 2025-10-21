@@ -251,12 +251,43 @@ const DayTimeSentiment = (props: Props) => {
                   textAlign: 'center',
                   verticalAlign: 'middle',
                   color: '#80808059'
+
                 }}
               >
                 <Translations text='no data' />
               </div>
             ) : (
-              <ReactApexcharts options={options_days} series={seriesDays} type='heatmap' height={170} />
+              <>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+
+                  }}
+                >
+                  <div
+                    style={{
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      color: '#555',
+                      fontSize: 13,
+                      minWidth: 20
+                    }}
+                  >
+                    <Translations text='Sentiment' />
+                  </div>
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <ReactApexcharts options={options_days} series={seriesDays} type='heatmap' height={170} />
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 8 }}>
+                  <Translations text='Day' />
+                </div>
+              </>
             )}
           </Grid>
           <Grid item xs={8}>
@@ -273,7 +304,36 @@ const DayTimeSentiment = (props: Props) => {
                 <Translations text='no data' />
               </div>
             ) : (
-              <ReactApexcharts options={options_hours} series={seriesHour} type='heatmap' height={170} />
+              <>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                  }}
+                >
+                  <div
+                    style={{
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      color: '#555',
+                      fontSize: 13,
+                      minWidth: 20
+                    }}
+                  >
+                    <Translations text='Sentiment' />
+                  </div>
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <ReactApexcharts options={options_hours} series={seriesHour} type='heatmap' height={170} />
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 8}}>
+                  <Translations text='Date' />
+                </div>
+              </>
             )}
           </Grid>
         </Grid>

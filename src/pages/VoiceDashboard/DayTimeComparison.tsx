@@ -191,7 +191,38 @@ const DayTimeComparison = ({
             <Translations text='no data' />
           </div>
         ) : (
-          <ReactApexcharts options={options} series={series} type='heatmap' height={350} />
+          <>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                height: 400,
+                overflow: 'visible'
+              }}
+            >
+              <div
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                  textAlign: 'center',
+                  whiteSpace: 'nowrap',
+                  color: '#555',
+                  fontSize: 13,
+                  minWidth: 20
+                }}
+              >
+                <Translations text='Day' />
+              </div>
+
+              <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
+                <ReactApexcharts options={options} series={series} type='heatmap' height={350} />
+              </div>
+            </div>
+            <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: -30 }}>
+              <Translations text='Time' />
+            </div>
+          </>
         )}
         {showDetail ? (
           <DailyMessageDetail
