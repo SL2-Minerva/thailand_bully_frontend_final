@@ -47,7 +47,7 @@ const DayTimeBullyType = (props: Props) => {
   const [yIndexTime, setYIndexTime] = useState()
   const [xIndexTime, setXIndexTime] = useState()
   const Days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']
-  const {settings} = useSettings();
+  const { settings } = useSettings()
   const [ylabels, setYlabels] = useState<any>([])
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -72,11 +72,37 @@ const DayTimeBullyType = (props: Props) => {
         }
       }
     },
+    plotOptions: {
+      heatmap: {
+        radius: 0, // ช่องเป็นสี่เหลี่ยมตรง
+        enableShades: true, // ไล่สีตามค่า
+        shadeIntensity: 0.5,
+        distributed: false // gradient ตามค่าจริง
+      }
+    },
+    stroke: {
+      show: true, // เส้นแบ่งช่อง
+      width: 1,
+      colors: [settings.mode === 'light' ? '#ecececff' : '#555']
+    },
     tooltip: {
-      theme : settings.mode === 'light' ? 'light' : 'dark'
+      theme: settings.mode === 'light' ? 'light' : 'dark'
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: (val: number | string | number[]) => {
+        // ถ้า val เป็น array ให้เลือกแสดงค่าตัวแรก หรือ return '' ก็ได้
+        if (Array.isArray(val)) return ''
+        if (val === 0) return ''
+
+        return val
+      },
+      style: {
+        colors: [settings.mode === 'light' ? '#000' : '#fff'],
+        fontSize: '12px',
+        fontWeight: 'lighter'
+      },
+      dropShadow: { enabled: false }
     },
     colors: ['#548235'],
     xaxis: {
@@ -85,15 +111,15 @@ const DayTimeBullyType = (props: Props) => {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
-    yaxis : {
+    yaxis: {
       labels: {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
-    },
+      }
+    }
   }
 
   const options_type: ApexOptions = {
@@ -108,11 +134,37 @@ const DayTimeBullyType = (props: Props) => {
         }
       }
     },
+    plotOptions: {
+      heatmap: {
+        radius: 0, // ช่องเป็นสี่เหลี่ยมตรง
+        enableShades: true, // ไล่สีตามค่า
+        shadeIntensity: 0.5,
+        distributed: false // gradient ตามค่าจริง
+      }
+    },
+    stroke: {
+      show: true, // เส้นแบ่งช่อง
+      width: 1,
+      colors: [settings.mode === 'light' ? '#ecececff' : '#555']
+    },
     tooltip: {
-      theme : settings.mode === 'light' ? 'light' : 'dark'
+      theme: settings.mode === 'light' ? 'light' : 'dark'
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: (val: number | string | number[]) => {
+        // ถ้า val เป็น array ให้เลือกแสดงค่าตัวแรก หรือ return '' ก็ได้
+        if (Array.isArray(val)) return ''
+        if (val === 0) return ''
+
+        return val
+      },
+      style: {
+        colors: [settings.mode === 'light' ? '#000' : '#fff'],
+        fontSize: '12px',
+        fontWeight: 'lighter'
+      },
+      dropShadow: { enabled: false }
     },
     xaxis: {
       categories: Days,
@@ -120,14 +172,14 @@ const DayTimeBullyType = (props: Props) => {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
-    yaxis : {
+    yaxis: {
       labels: {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
     colors: ['#548235']
   }
@@ -193,7 +245,7 @@ const DayTimeBullyType = (props: Props) => {
   const reportNo = '2.2.019'
 
   return (
-    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1 }} >
+    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1 }}>
       {loadingDayByBullyType && <LinearProgress style={{ width: '100%' }} />}
 
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
@@ -292,7 +344,6 @@ const DayTimeBullyType = (props: Props) => {
             setShow={setShowDetail}
             params={params}
             reportNo={reportNo}
-
             keywordId={params.keywordIds === 'all' ? '' : params.keywordIds}
             setKeywordId={setKeywordId}
           />

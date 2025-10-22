@@ -70,11 +70,37 @@ const DayTimeSentiment = (props: Props) => {
         }
       }
     },
+    plotOptions: {
+      heatmap: {
+        radius: 0, // ช่องเป็นสี่เหลี่ยมตรง
+        enableShades: true, // ไล่สีตามค่า
+        shadeIntensity: 0.5,
+        distributed: false // gradient ตามค่าจริง
+      }
+    },
+    stroke: {
+      show: true, // เส้นแบ่งช่อง
+      width: 1,
+      colors: [settings.mode === 'light' ? '#ecececff' : '#555']
+    },
     tooltip: {
-      theme : settings.mode === 'light' ? 'light' : 'dark'
+      theme: settings.mode === 'light' ? 'light' : 'dark'
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: (val: number | string | number[]) => {
+        // ถ้า val เป็น array ให้เลือกแสดงค่าตัวแรก หรือ return '' ก็ได้
+        if (Array.isArray(val)) return ''
+        if (val === 0) return ''
+
+        return val
+      },
+      style: {
+        colors: [settings.mode === 'light' ? '#000' : '#fff'],
+        fontSize: '12px',
+        fontWeight: 'lighter'
+      },
+      dropShadow: { enabled: false }
     },
     xaxis: {
       categories: TimeAxis,
@@ -106,11 +132,37 @@ const DayTimeSentiment = (props: Props) => {
         }
       }
     },
+    plotOptions: {
+      heatmap: {
+        radius: 0, // ช่องเป็นสี่เหลี่ยมตรง
+        enableShades: true, // ไล่สีตามค่า
+        shadeIntensity: 0.5,
+        distributed: false // gradient ตามค่าจริง
+      }
+    },
+    stroke: {
+      show: true, // เส้นแบ่งช่อง
+      width: 1,
+      colors: [settings.mode === 'light' ? '#ecececff' : '#555']
+    },
     tooltip: {
-      theme : settings.mode === 'light' ? 'light' : 'dark'
+      theme: settings.mode === 'light' ? 'light' : 'dark'
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: (val: number | string | number[]) => {
+        // ถ้า val เป็น array ให้เลือกแสดงค่าตัวแรก หรือ return '' ก็ได้
+        if (Array.isArray(val)) return ''
+        if (val === 0) return ''
+
+        return val
+      },
+      style: {
+        colors: [settings.mode === 'light' ? '#000' : '#fff'],
+        fontSize: '12px',
+        fontWeight: 'lighter'
+      },
+      dropShadow: { enabled: false }
     },
     xaxis: {
       categories: Days,
@@ -118,14 +170,14 @@ const DayTimeSentiment = (props: Props) => {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
-    yaxis : {
+    yaxis: {
       labels: {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
     colors: ['#548235']
   }
@@ -283,7 +335,6 @@ const DayTimeSentiment = (props: Props) => {
             setShow={setShowDetail}
             params={params}
             reportNo={reportNo}
-
             keywordId={params.keywordIds === 'all' ? '' : params.keywordIds}
             setKeywordId={setKeywordId}
           />

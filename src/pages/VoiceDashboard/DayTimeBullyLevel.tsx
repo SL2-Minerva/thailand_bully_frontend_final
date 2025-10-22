@@ -48,7 +48,7 @@ const DayTimeBullyLevel = (props: Props) => {
   const [xIndexTime, setXIndexTime] = useState()
   const [ylabels, setYlabels] = useState<any>([])
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const {settings} = useSettings();
+  const { settings } = useSettings()
   const rowOptionsOpen = Boolean(anchorEl)
 
   const handleRowOptionsClick = (event: MouseEvent<HTMLElement>) => {
@@ -57,7 +57,6 @@ const DayTimeBullyLevel = (props: Props) => {
   const handleRowOptionsClose = () => {
     setAnchorEl(null)
   }
-
 
   const Days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']
 
@@ -73,11 +72,37 @@ const DayTimeBullyLevel = (props: Props) => {
         }
       }
     },
+    plotOptions: {
+      heatmap: {
+        radius: 0, // ช่องเป็นสี่เหลี่ยมตรง
+        enableShades: true, // ไล่สีตามค่า
+        shadeIntensity: 0.5,
+        distributed: false // gradient ตามค่าจริง
+      }
+    },
+    stroke: {
+      show: true, // เส้นแบ่งช่อง
+      width: 1,
+      colors: [settings.mode === 'light' ? '#ecececff' : '#555']
+    },
     tooltip: {
-      theme : settings.mode === 'light' ? 'light' : 'dark'
+      theme: settings.mode === 'light' ? 'light' : 'dark'
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: (val: number | string | number[]) => {
+        // ถ้า val เป็น array ให้เลือกแสดงค่าตัวแรก หรือ return '' ก็ได้
+        if (Array.isArray(val)) return ''
+        if (val === 0) return ''
+
+        return val
+      },
+      style: {
+        colors: [settings.mode === 'light' ? '#000' : '#fff'],
+        fontSize: '12px',
+        fontWeight: 'lighter'
+      },
+      dropShadow: { enabled: false }
     },
     xaxis: {
       categories: TimeAxis,
@@ -85,14 +110,14 @@ const DayTimeBullyLevel = (props: Props) => {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
-    yaxis : {
+    yaxis: {
       labels: {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
     colors: ['#548235']
   }
@@ -115,20 +140,46 @@ const DayTimeBullyLevel = (props: Props) => {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
     },
-    yaxis : {
+    yaxis: {
       labels: {
         style: {
           colors: settings.mode === 'light' ? '#4c4e64de' : 'white'
         }
-      } 
+      }
+    },
+    plotOptions: {
+      heatmap: {
+        radius: 0, // ช่องเป็นสี่เหลี่ยมตรง
+        enableShades: true, // ไล่สีตามค่า
+        shadeIntensity: 0.5,
+        distributed: false // gradient ตามค่าจริง
+      }
+    },
+    stroke: {
+      show: true, // เส้นแบ่งช่อง
+      width: 1,
+      colors: [settings.mode === 'light' ? '#ecececff' : '#555']
     },
     tooltip: {
-      theme : settings.mode === 'light' ? 'light' : 'dark'
+      theme: settings.mode === 'light' ? 'light' : 'dark'
     },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: (val: number | string | number[]) => {
+        // ถ้า val เป็น array ให้เลือกแสดงค่าตัวแรก หรือ return '' ก็ได้
+        if (Array.isArray(val)) return ''
+        if (val === 0) return ''
+
+        return val
+      },
+      style: {
+        colors: [settings.mode === 'light' ? '#000' : '#fff'],
+        fontSize: '12px',
+        fontWeight: 'lighter'
+      },
+      dropShadow: { enabled: false }
     },
     colors: ['#548235']
   }
@@ -193,7 +244,7 @@ const DayTimeBullyLevel = (props: Props) => {
   }, [yIndexTime, xIndexTime])
 
   return (
-    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1 }} >
+    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1 }}>
       {loadingByBullyLevel && <LinearProgress style={{ width: '100%' }} />}
 
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
@@ -292,7 +343,6 @@ const DayTimeBullyLevel = (props: Props) => {
             setShow={setShowDetail}
             params={params}
             reportNo={reportNo}
-
             keywordId={params.keywordIds === 'all' ? '' : params.keywordIds}
             setKeywordId={setKeywordId}
           />

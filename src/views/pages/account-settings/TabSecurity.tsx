@@ -21,6 +21,8 @@ import { Typography } from '@mui/material'
 import { ChangePassword } from 'src/services/api/users/users'
 import { useRouter } from 'next/router'
 import Translations from 'src/layouts/components/Translations'
+import { useTranslation } from 'react-i18next'
+import Swal from 'sweetalert2'
 
 // ** Custom Components Imports
 // import CustomAvatar from 'src/@core/components/mui/avatar'
@@ -46,6 +48,8 @@ const TabSecurity = () => {
     showCurrentPassword: false,
     showConfirmNewPassword: false
   })
+
+  const { t } = useTranslation()
 
   const router = useRouter()
 
@@ -99,16 +103,24 @@ const TabSecurity = () => {
       callChangePassword(formData)
         .then(data => {
           if (data) {
-            router.push('/dashboard/overall')
+            Swal.fire({
+              icon: 'success',
+              title: t('Password changed successfully'),
+              confirmButtonText: t('OK')
+            }).then(() => {
+              router.push('/dashboard/overall')
+            })
           }
         })
         .catch((ex: any) => {
           if (ex) {
             setShowErrorMessage(true)
-            setErrorText(ex?.response?.data?.msg)
+            if (ex?.response?.data?.msg) {
+              setErrorText('Old Password')
+            }
           }
         })
-    } else if (values.currentPassword === values.newPassword){
+    } else if (values.currentPassword === values.newPassword) {
       setShowErrorMessage(true)
       setErrorText('Current Password and New Password cant be the same! Please check again.')
     } else {
@@ -209,12 +221,10 @@ const TabSecurity = () => {
               </Grid>
 
               <Grid item xs={12}>
-                {showErrorMessage ? (
+                {showErrorMessage && (
                   <Typography variant='body2' sx={{ color: 'red' }}>
-                    <Translations text='Old Password' />
+                    {t(errorText) as string}
                   </Typography>
-                ) : (
-                  ''
                 )}
               </Grid>
             </Grid>
