@@ -24,7 +24,7 @@ import Repeater from 'src/@core/components/repeater'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import DatePicker from '@mui/lab/DatePicker'
-import { format } from 'date-fns'
+import { format, sub } from 'date-fns'
 
 // ** Icons Imports
 import Plus from 'mdi-material-ui/Plus'
@@ -97,7 +97,7 @@ const DialogCampaign = (props: DialogInfoProps) => {
 
   const initailAndColor = GenerateRandomColor()
   const [selectedValue, setSelectedValue] = useState('private')
-
+  const [submitted, setSubmitted] = useState(false)
   const [keywords, setKeywords] = useState([
     {
       id: 1,
@@ -440,11 +440,16 @@ const DialogCampaign = (props: DialogInfoProps) => {
             <Grid container spacing={6} style={{ paddingLeft: '1.5rem' }}>
               <Grid item sm={12} xs={12}>
                 <TextField
+                  required
                   fullWidth
                   label={<Translations text='Campaign Name' />}
                   value={campaignName}
                   onChange={handleCampaignName}
                   placeholder=''
+                  error={!campaignName.trim() && submitted}
+                  helperText={
+                    submitted && campaignName.trim() === '' ? <Translations text='Campaign Name is required' /> : ''
+                  }
                 />
               </Grid>
               <Grid item sm={12} xs={12}>
@@ -484,7 +489,7 @@ const DialogCampaign = (props: DialogInfoProps) => {
 
               <Grid item sm={12} xs={12}>
                 {/* <Typography sx={{ mb: 2, fontWeight: 500 }}>Social Visualization</Typography> */}
-                <FormControl fullWidth>
+                <FormControl fullWidth error={submitted && sourceList.length === 0}>
                   <InputLabel id='demo-multiple-name-label'>
                     <Translations text='Platform' />
                   </InputLabel>
@@ -505,6 +510,11 @@ const DialogCampaign = (props: DialogInfoProps) => {
                         </MenuItem>
                       ))}
                   </Select>
+                  {submitted && sourceList.length === 0 && (
+                    <FormHelperText>
+                      <Translations text='Please select at least one platform' />
+                    </FormHelperText>
+                  )}
                 </FormControl>
               </Grid>
 
@@ -541,7 +551,7 @@ const DialogCampaign = (props: DialogInfoProps) => {
               </Grid> */}
 
               <Grid item sm={12} xs={12}>
-                <FormControl sx={{ mt: 3, ml: 5 }}>
+                <FormControl sx={{ mt: 3, ml: 5 }} error={submitted && !selectedValue}>
                   <FormLabel id='demo-row-radio-buttons-group-label'>
                     <Translations text='Campaign Privacy' />
                   </FormLabel>
@@ -574,6 +584,11 @@ const DialogCampaign = (props: DialogInfoProps) => {
                       ''
                     )}
                   </RadioGroup>
+                  {submitted && !selectedValue && (
+                    <FormHelperText>
+                      <Translations text='Please choose one' />
+                    </FormHelperText>
+                  )}
                 </FormControl>
               </Grid>
             </Grid>
@@ -666,6 +681,10 @@ const DialogCampaign = (props: DialogInfoProps) => {
                             ...params.inputProps,
                             placeholder: t('dd/mm/yyyy')
                           }}
+                          error={submitted && !date}
+                          helperText={
+                            submitted && !date ? <Translations text='Please select a start date' /> : ''
+                          }
                         />
                       )}
                     />
@@ -687,6 +706,10 @@ const DialogCampaign = (props: DialogInfoProps) => {
                             ...params.inputProps,
                             placeholder: t('dd/mm/yyyy')
                           }}
+                          error={submitted && !endDate}
+                          helperText={
+                            submitted && !endDate ? <Translations text='Please select an end date' /> : ''
+                          }
                         />
                       )}
                     />
@@ -734,7 +757,19 @@ const DialogCampaign = (props: DialogInfoProps) => {
             variant='contained'
             sx={{ mr: 2 }}
             onClick={() => {
-              if (!checkKeyword && !checkKeywordAnd && !checkKeywordOr && !showErrorFrequency) {
+              setSubmitted(true)
+
+              if (
+                campaignName.trim() &&
+                frequency >= 240 &&
+                selectedValue &&
+                sourceList.length > 0 &&
+                date &&
+                endDate &&
+                !keywords.some(k => !k.name.trim()) &&
+                !checkKeyword &&
+                !showErrorFrequency
+              ) {
                 createNewCampaign()
               }
             }}

@@ -558,5 +558,12 @@
   "Export" : "ส่งออก",
   "dd/mm/yyyy" : "วว/ดด/ปปป",
   "Add Keyword" : "เพิ่มคีย์เวิร์ด",
-  "dd-mm-yyyy" : "วว-ดด-ปปป"
+  "dd-mm-yyyy" : "วว-ดด-ปปป",
+  "Campaign Name is required" : "จำเป็นต้องระบุชื่อแคมเปญ",
+  "Description is required" : "จำเป็นต้องระบุรายละเอียด",
+  "Please select at least one platform" : "โปรดเลือกแพลตฟอร์มอย่างน้อยหนึ่งแพลตฟอร์ม",
+  "Please choose one" : "โปรดเลือกอย่างใดอย่างหนึ่ง",
+  "Please fill in the keyword field" : "โปรดกรอกช่องคีย์เวิร์ด",
+  "Please select a start date" : "โปรดเลือกวันที่เริ่มต้น",
+  "Please select an end date" : "โปรดเลือกวันที่สิ้นสุด"
 }

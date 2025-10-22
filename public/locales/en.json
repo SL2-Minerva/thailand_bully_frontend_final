@@ -558,5 +558,12 @@
   "Export" : "Export",
   "dd/mm/yyyy" : "dd/mm/yyyy",
   "Add Keyword" : "Add Keyword",
-  "dd-mm-yyyy" : "dd-mm-yyyy"
+  "dd-mm-yyyy" : "dd-mm-yyyy",
+  "Campaign Name is required" : "Campaign Name is required",
+  "Description is required" : "Description is required",
+  "Please select at least one platform" : "Please select at least one platform",
+  "Please choose one" : "Please choose one",
+  "Please fill in the keyword field" : "Please fill in the keyword field",
+  "Please select a start date" : "Please select a start date",
+  "Please select an end date" : "Please select an end date"
 }
