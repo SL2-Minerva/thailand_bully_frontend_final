@@ -31,9 +31,9 @@ import { calculateDate, get1stAndLastDayOfMonth, PickerProps, wordBreaks } from 
 import { UserPermission } from 'src/services/api/users/role'
 import Graph from 'react-graph-vis'
 
-import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
+// import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
 
-// import 'vis-network/styles/vis-network.css'
+import 'vis-network/styles/vis-network.css'
 
 import { initialGraph } from '.'
 import { GraphicColors, BullyTypeSummaryColors } from 'src/utils/const'

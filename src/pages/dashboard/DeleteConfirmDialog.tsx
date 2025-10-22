@@ -3,9 +3,9 @@ import Fade, { FadeProps } from '@mui/material/Fade'
 import { Box, Card, Dialog, DialogContent, IconButton, Typography, Grid, Button } from '@mui/material'
 import Close from 'mdi-material-ui/Close'
 
-import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
+// import 'react-graph-vis/node_modules/vis-network/dist/dist/vis-network.css'
 
-// import 'vis-network/styles/vis-network.css'
+import 'vis-network/styles/vis-network.css'
 
 import Translations from 'src/layouts/components/Translations'
 import { DeleteMessage } from 'src/services/api/dashboards/overall/overallDashboardApi'

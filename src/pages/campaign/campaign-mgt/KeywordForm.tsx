@@ -361,6 +361,12 @@ const KeywordForm = (props: any) => {
             required
             value={keywords[indexNumber]?.name || ''}
             onChange={e => handleChangeLabel(indexNumber, e)}
+            error={!keywords[indexNumber]?.name || keywords[indexNumber]?.name.trim() === ''}
+            helperText={
+              !keywords[indexNumber]?.name || keywords[indexNumber]?.name.trim() === ''
+                ? <Translations text='Please fill in the keyword field' />
+                : ''
+            }
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end" sx={{ pr: 0 }}>

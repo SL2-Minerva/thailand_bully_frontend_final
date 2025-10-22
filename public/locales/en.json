@@ -613,5 +613,12 @@
   "User created successfully" : "User created successfully",
   "This email is already in use" : "This email is already in use",
   "User updated successfully" : "User updated successfully",
-  "An error occurred": "An error occurred"
+  "An error occurred": "An error occurred",
+  "Campaign Name is required" : "Campaign Name is required",
+  "Description is required" : "Description is required",
+  "Please select at least one platform" : "Please select at least one platform",
+  "Please choose one" : "Please choose one",
+  "Please fill in the keyword field" : "Please fill in the keyword field",
+  "Please select a start date" : "Please select a start date",
+  "Please select an end date" : "Please select an end date"
 }

@@ -320,8 +320,39 @@ const PeriodComparisonChart = (props: LineProps) => {
                 <Translations text='no data' />
               </div>
             ) : (
-              <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
-            )}
+          <>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                height: 400,
+                overflow: 'visible'
+              }}
+            >
+              <div
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                  textAlign: 'center',
+                  whiteSpace: 'nowrap',
+                  color: '#555',
+                  fontSize: 13,
+                  minWidth: 20
+                }}
+              >
+                <Translations text='Engagement' />
+              </div>
+
+              <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
+                <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
+              </div>
+            </div>
+            <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 15 }}>
+              <Translations text='Channel' />
+            </div>
+          </>
+        )}
           </Grid>
           <Grid item xs={12}>
             {resultSentimentComparisonByEngagement?.value ? (

@@ -316,7 +316,37 @@ const DayTimeBullyLevel = (props: Props) => {
                 <Translations text='no data' />
               </div>
             ) : (
-              <ReactApexcharts options={options_level} series={seriesDays} type='heatmap' height={200} />
+              <>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+
+                  }}
+                >
+                  <div
+                    style={{
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      color: '#555',
+                      fontSize: 13,
+                      minWidth: 20
+                    }}
+                  >
+                    <Translations text='Bully Level' />
+                  </div>
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <ReactApexcharts options={options_level} series={seriesDays} type='heatmap' height={170} />
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 8 }}>
+                  <Translations text='Day' />
+                </div>
+              </>
             )}
           </Grid>
           <Grid item xs={8}>
@@ -333,7 +363,36 @@ const DayTimeBullyLevel = (props: Props) => {
                 <Translations text='no data' />
               </div>
             ) : (
-              <ReactApexcharts options={options_hours} series={seriesHour} type='heatmap' height={200} />
+              <>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                  }}
+                >
+                  <div
+                    style={{
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      color: '#555',
+                      fontSize: 13,
+                      minWidth: 20
+                    }}
+                  >
+                    <Translations text='Bully Level' />
+                  </div>
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <ReactApexcharts options={options_hours} series={seriesHour} type='heatmap' height={170} />
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 8}}>
+                  <Translations text='Date' />
+                </div>
+              </>
             )}
           </Grid>
         </Grid>

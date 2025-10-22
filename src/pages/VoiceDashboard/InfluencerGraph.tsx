@@ -327,7 +327,7 @@ const InfluencerGraph = ({
   }
 
   return (
-    <Paper sx={{ height: 514, border: `3px solid #fff`, borderRadius: 1 }}>
+    <Paper sx={{ height: 550, border: `3px solid #fff`, borderRadius: 1 }}>
       {loadingNumbersOfAccounts && <LinearProgress style={{ width: '100%' }} />}
 
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
@@ -422,11 +422,33 @@ const InfluencerGraph = ({
           </div>
         ) : (
           <>
-            {chooseChart === 'line' ? (
-              <Line ref={chartRef} data={data} options={lineOptions as any} height={353} onClick={onClick} />
-            ) : (
-              <Bar ref={chartRef} data={data} options={options as any} height={353} onClick={onClick} />
-            )}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', height: 400, overflow: 'visible' }}>
+              <div
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                  textAlign: 'center',
+                  whiteSpace: 'nowrap',
+                  color: '#555',
+                  fontSize: 13,
+                  minWidth: 20
+                }}
+              >
+                <Translations text='Account' />
+              </div>
+              <div style={{ flex: 1, height: '100%', minWidth: 0 }}> 
+                <div style={{ width: '100%', height: '100%' }}>
+                {chooseChart === 'line' ? (
+                  <Line ref={chartRef} data={data} options={lineOptions as any} height={400} onClick={onClick} />
+                ) : (
+                  <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
+                )}
+                </div>
+              </div>
+            </div>
+            <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 15 }}> 
+              <Translations text='Date' /> 
+            </div>
           </>
         )}
       </CardContent>

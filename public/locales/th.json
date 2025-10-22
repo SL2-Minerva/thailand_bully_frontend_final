@@ -615,5 +615,12 @@
   "User created successfully" : "สร้างผู้ใช้งานเรียบร้อยแล้ว",
   "This email is already in use" : "อีเมลนี้ถูกใช้งานแล้ว",
   "User updated successfully" : "แก้ไขข้อมูลผู้ใช้งานเรียบร้อยแล้ว",
-  "An error occurred": "เกิดข้อผิดพลาด"
+  "An error occurred": "เกิดข้อผิดพลาด",
+  "Campaign Name is required" : "จำเป็นต้องระบุชื่อแคมเปญ",
+  "Description is required" : "จำเป็นต้องระบุรายละเอียด",
+  "Please select at least one platform" : "โปรดเลือกแพลตฟอร์มอย่างน้อยหนึ่งแพลตฟอร์ม",
+  "Please choose one" : "โปรดเลือกอย่างใดอย่างหนึ่ง",
+  "Please fill in the keyword field" : "โปรดกรอกช่องคีย์เวิร์ด",
+  "Please select a start date" : "โปรดเลือกวันที่เริ่มต้น",
+  "Please select an end date" : "โปรดเลือกวันที่สิ้นสุด"
 }
