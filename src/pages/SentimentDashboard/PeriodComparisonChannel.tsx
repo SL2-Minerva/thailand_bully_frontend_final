@@ -225,7 +225,7 @@ const PeriodComparisonChannelChart = (props: LineProps) => {
   // const reportNo = '5.2.013'
 
   return (
-    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1 ,minHeight: 713 }} >
+    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1, minHeight: 713 }}>
       {loadingSenitmentComparisonByChannel && <LinearProgress style={{ width: '100%' }} />}
 
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
@@ -300,38 +300,38 @@ const PeriodComparisonChannelChart = (props: LineProps) => {
               </div>
             ) : (
               <>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    height: 400,
+                    overflow: 'visible'
+                  }}
+                >
                   <div
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      height: 400,
-                      overflow: 'visible'
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      color: '#555',
+                      fontSize: 13,
+                      minWidth: 20
                     }}
                   >
-                    <div
-                      style={{
-                        writingMode: 'vertical-rl',
-                        transform: 'rotate(180deg)',
-                        textAlign: 'center',
-                        whiteSpace: 'nowrap',
-                        color: '#555',
-                        fontSize: 13,
-                        minWidth: 20
-                      }}
-                    >
-                      <Translations text='Sentiment' />
-                    </div>
+                    <Translations text='Message' />
+                  </div>
 
-                    <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
-                      <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
-                    </div>
+                  <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
+                    <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
                   </div>
-                  <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 10 }}>
-                    <Translations text='Channel' />
-                  </div>
-                </>
-              )}
+                </div>
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 10 }}>
+                  <Translations text='Channel' />
+                </div>
+              </>
+            )}
           </Grid>
           <Grid item xs={12}>
             {resultSenitmentComparisonByChannel?.value ? (

@@ -303,7 +303,6 @@ const DayTimeSentiment = (props: Props) => {
                   textAlign: 'center',
                   verticalAlign: 'middle',
                   color: '#80808059'
-
                 }}
               >
                 <Translations text='no data' />
@@ -314,8 +313,7 @@ const DayTimeSentiment = (props: Props) => {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '12px',
-
+                    gap: '12px'
                   }}
                 >
                   <div
@@ -361,7 +359,7 @@ const DayTimeSentiment = (props: Props) => {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '12px',
+                    gap: '12px'
                   }}
                 >
                   <div
@@ -382,8 +380,8 @@ const DayTimeSentiment = (props: Props) => {
                     <ReactApexcharts options={options_hours} series={seriesHour} type='heatmap' height={170} />
                   </div>
                 </div>
-                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 8}}>
-                  <Translations text='Date' />
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 8 }}>
+                  <Translations text='Time' />
                 </div>
               </>
             )}

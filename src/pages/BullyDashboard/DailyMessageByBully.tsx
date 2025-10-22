@@ -118,7 +118,6 @@ export const chartLabel = (data: any) => {
   return labelValue
 }
 
-
 const onCapture = () => {
   const pictureId = document.getElementById('savePNG')
   if (pictureId) {
@@ -179,7 +178,7 @@ const DailyMessgeByBully = (props: LineProps) => {
     const dailyMessageData = resultFilterData?.bully_level
 
     // const keywordId: number | null = null // Old
-    const keywordId = params.keywordIds === 'all' ? '' : params.keywordIds || null; // New
+    const keywordId = params.keywordIds === 'all' ? '' : params.keywordIds || null // New
     let sourceId: number | null = null
     let campaign_id: number | null = null
     let organization_id: number | null = null
@@ -300,7 +299,7 @@ const DailyMessgeByBully = (props: LineProps) => {
         grid: {
           borderColor,
           color: gridLineColor
-        },
+        }
       }
     },
     plugins: {
@@ -526,20 +525,20 @@ const DailyMessgeByBully = (props: LineProps) => {
                   minWidth: 20
                 }}
               >
-                <Translations text='Bully Level' />
+                <Translations text='Message' />
               </div>
-              <div style={{ flex: 1, height: '100%', minWidth: 0 }}> 
+              <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
                 <div style={{ width: '100%', height: '100%' }}>
-                {chooseChart === 'line' ? (
-                  <Line ref={chartRef} data={data} options={lineOptions as any} height={400} onClick={onClick} />
-                ) : (
-                  <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
-                )}
+                  {chooseChart === 'line' ? (
+                    <Line ref={chartRef} data={data} options={lineOptions as any} height={400} onClick={onClick} />
+                  ) : (
+                    <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
+                  )}
                 </div>
               </div>
             </div>
-            <div style={{ textAlign: 'center', marginTop: '0.75rem', color: '#555', fontSize: 13 }}> 
-              <Translations text='Date' /> 
+            <div style={{ textAlign: 'center', marginTop: '0.75rem', color: '#555', fontSize: 13 }}>
+              <Translations text='Date' />
             </div>
           </>
         )}
@@ -556,7 +555,6 @@ const DailyMessgeByBully = (props: LineProps) => {
             fileName='Bully Level: Daily Messages by Date.xlsx'
             apiPath='/export/export-bully'
             setKeywordId={setKeywordId}
-            
           />
         ) : (
           ''
