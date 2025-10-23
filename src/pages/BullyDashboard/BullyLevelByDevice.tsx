@@ -211,56 +211,58 @@ const BullyLevelByDevice = (props: LineProps) => {
     }
   }
 
-  const chartDatasets = (data: any) => {
-    if (!data) return []
-    let totalAmount: number[] = []
-    let keywordName = ''
-    const returnData: StackChartDataset[] = []
-    const color = BullyLevelColors
-    const total = data?.value || data?.data || []
 
-    for (let i = 0; i < total?.length; i++) {
-      totalAmount = []
-
-      for (let j = 0; j < total[i]?.data?.length; j++) {
-        totalAmount.push(total[i]?.data[j])
-      }
-
-      keywordName = t(total[i]?.keyword_name)
-      const chartDataset: StackChartDataset = {
-        fill: false,
-        tension: 0.2,
-        pointRadius: 4,
-        label: keywordName,
-        pointHoverRadius: 5,
-        pointStyle: 'circle',
-        borderColor: color[i],
-        backgroundColor: color[i],
-        pointHoverBorderWidth: 5,
-        pointHoverBorderColor: white,
-        pointBorderColor: 'transparent',
-        pointHoverBackgroundColor: color[i],
-        data: totalAmount
-      }
-
-      returnData.push(chartDataset)
-    }
-
-    return returnData
-  }
-  const chartLabel = (data: any) => {
-    if (!data) return []
-    const labels: any[] = []
-
-    if (data) {
-      for (let i = 0; i < data.labels?.length; i++) {
-        labels.push(data.labels[i])
-      }
-    }
-
-    return labels
-  }
   useEffect(() => {
+    const chartDatasets = (data: any) => {
+      if (!data) return []
+      let totalAmount: number[] = []
+      let keywordName = ''
+      const returnData: StackChartDataset[] = []
+      const color = BullyLevelColors
+      const total = data?.value || data?.data || []
+
+      for (let i = 0; i < total?.length; i++) {
+        totalAmount = []
+
+        for (let j = 0; j < total[i]?.data?.length; j++) {
+          totalAmount.push(total[i]?.data[j])
+        }
+
+        keywordName = t(total[i]?.keyword_name)
+        const chartDataset: StackChartDataset = {
+          fill: false,
+          tension: 0.2,
+          pointRadius: 4,
+          label: keywordName,
+          pointHoverRadius: 5,
+          pointStyle: 'circle',
+          borderColor: color[i],
+          backgroundColor: color[i],
+          pointHoverBorderWidth: 5,
+          pointHoverBorderColor: white,
+          pointBorderColor: 'transparent',
+          pointHoverBackgroundColor: color[i],
+          data: totalAmount
+        }
+
+        returnData.push(chartDataset)
+      }
+
+      return returnData
+    }
+    const chartLabel = (data: any) => {
+      if (!data) return []
+      const labels: any[] = []
+
+      if (data) {
+        for (let i = 0; i < data.labels?.length; i++) {
+          labels.push(data.labels[i])
+        }
+      }
+
+      return labels
+    }
+
     if (resultBy) {
       const dailyMessageData = resultBy
       if (dailyMessageData) {
@@ -277,7 +279,7 @@ const BullyLevelByDevice = (props: LineProps) => {
         }
       }
     }
-  }, [resultBy, t, chartDatasets, chartLabel])
+  }, [resultBy, t])
 
   const data = {
     labels: label || [],
