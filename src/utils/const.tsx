@@ -4,8 +4,8 @@
 
 export const API_PATH =
   process.env.NEXT_PUBLIC_APP_ENV === 'localhost'
-    ? 'https://cornea-analysis.com/api'
-    : 'https://cornea-analysis.com/api'
+    ? 'https://api.socialguard.online/api'
+    : 'https://api.socialguard.online/api'
 
 // export const API_PATH =
 //   process.env.NEXT_PUBLIC_APP_ENV === 'localhost' ? 'http://127.0.0.1:8000/api' : 'http://127.0.0.1:8000/api'
