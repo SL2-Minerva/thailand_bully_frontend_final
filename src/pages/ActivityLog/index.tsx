@@ -43,7 +43,7 @@ const ActivityLog = () => {
       router.push('/login')
       window.location.reload()
     }
-  }, [errorActivityLog])
+  }, [errorActivityLog, router])
 
   const handleStatusCode = useCallback((e: SelectChangeEvent) => {
     setStatusCode(e.target.value)

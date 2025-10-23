@@ -279,7 +279,7 @@ const BullyLevelByAccount = (props: LineProps) => {
         }
       }
     }
-  }, [resultBy, t])
+  }, [resultBy, t, chartLabel, chartDatasets])
 
   const data = {
     labels: label || [],

@@ -281,7 +281,7 @@ const BullyLevelByChannel = (props: LineProps) => {
         }
       }
     }
-  }, [resultBy, t])
+  }, [resultBy, t, chartDatasets])
 
   const data = {
     labels: label || [],

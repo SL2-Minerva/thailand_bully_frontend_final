@@ -281,7 +281,7 @@ const BullyLevelByDay = (props: LineProps) => {
         }
       }
     }
-  }, [resultBy, t])
+  }, [resultBy, t, chartDatasets, chartLabel])
 
   const data = {
     labels: label || [],

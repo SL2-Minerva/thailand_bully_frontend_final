@@ -277,7 +277,7 @@ const BullyLevelByDevice = (props: LineProps) => {
         }
       }
     }
-  }, [resultBy, t])
+  }, [resultBy, t, chartDatasets, chartLabel])
 
   const data = {
     labels: label || [],
