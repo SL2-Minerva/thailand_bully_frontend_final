@@ -84,7 +84,7 @@ const PeriodComparisonChart = (props: LineProps) => {
     chartId,
     resultSentimentComparisonByEngagement,
     loadingSenitmentComparisonByEngagement,
-    
+
     reportNo
   } = props
   const [label, setLabel] = useState<string[]>([])
@@ -247,7 +247,7 @@ const PeriodComparisonChart = (props: LineProps) => {
   const cardTitle = getTitle(type, chartTitle)
 
   return (
-      <Paper sx={{ border: `3px solid #fff`, borderRadius: 1 ,minHeight: 713 }} >
+    <Paper sx={{ border: `3px solid #fff`, borderRadius: 1, minHeight: 713 }}>
       {loadingSenitmentComparisonByEngagement && <LinearProgress style={{ width: '100%' }} />}
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
         <span style={{ display: 'flex', justifyContent: 'flex-start' }}>
@@ -320,39 +320,39 @@ const PeriodComparisonChart = (props: LineProps) => {
                 <Translations text='no data' />
               </div>
             ) : (
-          <>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                height: 400,
-                overflow: 'visible'
-              }}
-            >
-              <div
-                style={{
-                  writingMode: 'vertical-rl',
-                  transform: 'rotate(180deg)',
-                  textAlign: 'center',
-                  whiteSpace: 'nowrap',
-                  color: '#555',
-                  fontSize: 13,
-                  minWidth: 20
-                }}
-              >
-                <Translations text='Engagement' />
-              </div>
+              <>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    height: 400,
+                    overflow: 'visible'
+                  }}
+                >
+                  <div
+                    style={{
+                      writingMode: 'vertical-rl',
+                      transform: 'rotate(180deg)',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      color: '#555',
+                      fontSize: 13,
+                      minWidth: 20
+                    }}
+                  >
+                    <Translations text='Engagement' />
+                  </div>
 
-              <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
-                <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
-              </div>
-            </div>
-            <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 15 }}>
-              <Translations text='Channel' />
-            </div>
-          </>
-        )}
+                  <div style={{ flex: 1, height: '100%', minWidth: 0 }}>
+                    <Bar ref={chartRef} data={data} options={options as any} height={400} onClick={onClick} />
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#555', fontSize: 13, marginTop: 15 }}>
+                  {resultSentimentComparisonByEngagement?.share ? 'Platform/Channel' : 'Engagement Type'}
+                </div>
+              </>
+            )}
           </Grid>
           <Grid item xs={12}>
             {resultSentimentComparisonByEngagement?.value ? (
@@ -420,16 +420,16 @@ const PeriodComparisonChart = (props: LineProps) => {
                         )
                       })}
                     </TableRow> */}
-                    
+
                     {/* เพิ่มเงื่อนไขนี้เพื่อแสดง Views เฉพาะในกรณีที่มี Share/Comment/Reaction */}
                     {(resultSentimentComparisonByEngagement?.share ||
                       resultSentimentComparisonByEngagement?.comment ||
                       resultSentimentComparisonByEngagement?.reaction) && (
                       <TableRow>
-                        <TableCell width="10">Views</TableCell>
+                        <TableCell width='10'>Views</TableCell>
                         {(resultSentimentComparisonByEngagement?.views || []).map((view: any, index: number) => {
                           return (
-                            <TableCell align="center" key={index}>
+                            <TableCell align='center' key={index}>
                               {view}%
                             </TableCell>
                           )
